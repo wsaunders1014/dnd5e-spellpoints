@@ -131,7 +131,7 @@ Hooks.on('renderItemSheet5e',(app,html,data) => {
             return;
         if(!SpellPoints.isMixedActorSpellPointEnabled(actor))
             return;
-        if(_actor.classes.hasOwnProperty('warlock') && !SpellPoints.settings.warlockUseSp)
+        if(app.actor.classes.hasOwnProperty('warlock') && !SpellPoints.settings.warlockUseSp)
         return true;
         //get spellOverrides from Actor   
         let override = SpellPoints.getOverride(spell.item._id,actor);

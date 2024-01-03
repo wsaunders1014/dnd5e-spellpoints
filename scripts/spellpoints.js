@@ -173,8 +173,8 @@ export class SpellPoints {
    */
 
   static castSpell(item, consume, options) {
-
-    if (!consume.consumeSpellLevel) {
+    
+    if (!consume.slotLevel) {
       return [item, consume, options];
     }
     const isLegacyMode = SpellPoints.isLegacyMode();
@@ -400,13 +400,13 @@ export class SpellPoints {
     let cost = 0;
     /** Replace list of spell slots with list of spell point costs **/
     function replaceSpellDropdown(tempMod=0){
-        $('select[name="consumeSpellLevel"] option', html).each(function () {
+        $('select[name="slotLevel"] option', html).each(function () {
         let selectValue = $(this).val();
 
         if (selectValue == 'pact' && warlockCanCast) {
             level = actor.system.spells.pact.level;
         } else {
-            level = selectValue;
+            level = selectValue.split('spell')[1];
         }
     
         cost = SpellPoints.withActorData(settings.spellPointsCosts[level], actor) + totalMods + tempMod;
@@ -451,7 +451,7 @@ export class SpellPoints {
       if (!$('input[name="consumeSpellSlot"]', html).prop('checked') || SpellPoints.settings.spEnableVariant) {
         $('.dialog-button.original', html).trigger("click");
 
-      } else if ($('select[name="consumeSpellLevel"]', html).length > 0) {
+      } else if ($('select[name="slotLevel"]', html).length > 0) {
         if (missing_points) {
           ui.notifications.error("You don't have enough: '" + SpellPoints.settings.spResource + "' to cast this spell");
           dialog.close();

@@ -36,4 +36,6 @@
     - Added a spell point config similar to the hit point config. You can manually adjust your base level spell points, or calculate the max by how many spell slots you have. There's also a bonus field that will add to your base.
     - Spell points now update on level up. The base gets recalculated. Bonus will remain if present.
     - Added some support for Warlock spell point casting though I don't see the point. It doesn't let Warlock use spell points on lower level spells since that's counter to Warlock class, so not sure why anyone would need it.
+- 1.7.2
+   - Added compatability for DND5e 2.4.0
     
