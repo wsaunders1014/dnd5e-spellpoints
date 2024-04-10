@@ -1,0 +1,113 @@
+{
+  "ownerId": "97e6e0cdd6a0493da63cf0b4cf432853",
+  "lastUpdateBy": null,
+  "createdDate": 1709259680553,
+  "id": "3f1ad878bd7041a69c10ce56135d4288",
+  "@version": 4,
+  "name": "Sell Page: 21 Day Fix",
+  "modelId": "a2c65c9f3dfa480d9c395a195ea5c0f5",
+  "published": "published",
+  "meta": {
+    "kind": "page",
+    "lastPreviewUrl": "https://www.bodi.com/us/en/s/fitness/21-day-fix?builder.space=97e6e0cdd6a0493da63cf0b4cf432853&builder.cachebust=true&builder.preview=page&builder.noCache=true&builder.allowTextEdit=true&__builder_editing__=true&builder.overrides.page=3f1ad878bd7041a69c10ce56135d4288&builder.overrides.3f1ad878bd7041a69c10ce56135d4288=3f1ad878bd7041a69c10ce56135d4288&builder.overrides.page:/us/en/s/fitness/21-day-fix=3f1ad878bd7041a69c10ce56135d4288&builder.options.locale=Default",
+    "originalContentId": "9566683b947940cd98a43bb94abaf060",
+    "componentsUsed": {
+      "Checklist": 1,
+      "HeroBanner": 1,
+      "SplitContent": 4,
+      "StickyFooter": 1,
+      "Button": 6,
+      "Carousel": 3,
+      "AnimatedSlider": 2,
+      "v2: Container": 12
+    },
+    "winningTest": null,
+    "hasLinks": false,
+    "breakpoints": {
+      "small": 767,
+      "medium": 1023
+    },
+    "symbolsUsed": {
+      "6d4c9f72aa8a4f74b0d8bdafcb96b319": true,
+      "532aae78a71f481ca25098f2d56fd5de": true
+    }
+  },
+  "priority": -1078.5,
+  "query": [
+    {
+      "@type": "@builder.io/core:Query",
+      "property": "urlPath",
+      "operator": "is",
+      "value": "/s/fitness/21-day-fix"
+    }
+  ],
+  "data": {
+    "seoStructuredData": {
+      "itemsList": {
+        "Default": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"VideoObject\",\n  \"name\": \"21 Day Fix sample workout: Total Body Cardio Fix\",\n  \"description\": \"Try some of the simple moves that will drive your biggest results in this Total Body Cardio workout that will leave you sweating from head to toe.\",\n  \"thumbnailUrl\": \"https://cf-images.us-east-1.prod.boltdns.net/v1/static/1634697872/39cb7ac0-573c-494d-9a65-f5f4b86d6b38/e623f3b1-fe08-4df1-bd13-9ba3a7407a4b/1280x720/match/image.jpg\",\n  \"uploadDate\": \"2024-03-26T08:00:00-07:00\",\n  \"duration\": \"PT29M35S\",\n  \"embedUrl\": \"https://players.brightcove.net/1634697872/adCNPdiKU_default/index.html?videoId=6345592019112\"\n}",
+        "@type": "@builder.io/core:LocalizedValue"
+      },
+      "includedInSitemap": true,
+      "videos": {
+        "Default": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"VideoObject\",\n  \"name\": \"21 Day Fix: Your easy 21-day results plan\",\n  \"description\": \"Want to know why 21 Day Fix still tops bestseller lists after more than 10 years? Super Trainer Autumn Calabrese has the solution to help you lose up to 15 pounds in 21 days with her super-effective workouts and simple approach to eating. You’ll have a blast burning major calories, toning your muscles, and feeling healthier, stronger, and more confident. You won’t believe the progress you can make in just 3 short weeks—and that’s the key to sticking with it.\",\n  \"thumbnailUrl\": \"https://cf-images.us-east-1.prod.boltdns.net/v1/static/1634697872/8cac90f3-71f0-4c5e-8545-6f9d4fd78a33/c659db9f-ed4b-4f10-85fe-b55cab7f099f/1280x720/match/image.jpg\",\n  \"uploadDate\": \"2024-03-26T08:00:00-07:00\",\n  \"duration\": \"PT2M1S\",\n  \"embedUrl\": \"https://players.brightcove.net/1634697872/adCNPdiKU_default/index.html?videoId=6345492195112\"\n}",
+        "@type": "@builder.io/core:LocalizedValue"
+      }
+    },
+    "title": {
+      "Default": "21 Day Fix | Autumn Calabrese's fitness & portion plan",
+      "en-CA": "21 Day Fix | Autumn Calabrese's fitness & portion plan",
+      "en-US": "21 Day Fix | Autumn Calabrese's fitness & portion plan",
+      "@type": "@builder.io/core:LocalizedValue",
+      "fr-CA": "21 Day Fix | Le plan d’entraînement et de portions alimentaires d’Autumn Calabrese"
+    },
+    "robots": "",
+    "canonicalUrl": {
+      "fr-CA": "https://www.bodi.com/ca/fr/s/fitness/21-day-fix",
+      "en-CA": "https://www.bodi.com/ca/en/s/fitness/21-day-fix",
+      "Default": "https://www.bodi.com/us/en/s/fitness/21-day-fix",
+      "@type": "@builder.io/core:LocalizedValue",
+      "en-US": "https://www.bodi.com/us/en/s/fitness/21-day-fix"
+    },
+    "royaltyCode": "21D",
+    "pageType": "Landing",
+    "themeId": false,
+    "internalTitle": "Sell Page: 21 Day Fix",
+    "description": {
+      "en-CA": "Want amazing results in 21 days? Then all you need is 21 Day Fix from BODi (formerly Beachbody). Get the step-by-step plan for workouts and meals.",
+      "@type": "@builder.io/core:LocalizedValue",
+      "Default": "Want amazing results in 21 days? Then all you need is 21 Day Fix from BODi (formerly Beachbody). Get the step-by-step plan for workouts and meals.",
+      "en-US": "Want amazing results in 21 days? Then all you need is 21 Day Fix from BODi (formerly Beachbody). Get the step-by-step plan for workouts and meals.",
+      "fr-CA": "Tu veux obtenir de merveilleux résultats en 21 jours? Alors, tout ce dont tu as besoin c’est 21 Day Fix de BODi (anciennement Beachbody). Obtiens le plan étape par étape pour l’entraînement et les repas."
+    },
+    "inputs": [],
+    "openGraphImage": "https://cdn.builder.io/api/v1/image/assets%2F97e6e0cdd6a0493da63cf0b4cf432853%2F4f4fec6e7f46475281fbd8191c696aba",
+    "blocks": [
+      "/* @ref:block:builder-1333d378ecbf4051adf2793f5d12a03b */",
+      "/* @ref:block:builder-33eb0da4c81b439c9cc1a31fb5ee373b */",
+      "/* @ref:block:builder-9f534cca7f50488a87c34f6c9ded924f */",
+      "/* @ref:block:builder-4067826569b64b19bc75899d9a7a49ea */",
+      "/* @ref:block:builder-a2de93bc4b6d41c7acb1a00dcd3071bd */",
+      "/* @ref:block:builder-3b6ba96da96d4ebf8cf80ebbfb618d6e */",
+      "/* @ref:block:builder-e9311accb9be4011be7408ad24228403 */",
+      "/* @ref:block:builder-aaa568737ad74de3afdbe9701bc0d1d8 */",
+      "/* @ref:block:builder-c848144c5184450a9d7ed31546604a05 */",
+      "/* @ref:block:builder-c18f355dc27c4313bb13a6817d3b0925 */",
+      "/* @ref:block:builder-f2b03a69cbce4d17856f700fd7012863 */",
+      "/* @ref:block:builder-d3b5be01646a4be29f8487cc6964485c */",
+      "/* @ref:block:builder-065712943f70451db3da0d6603a4f6f3 */"
+    ]
+  },
+  "metrics": {
+    "clicks": 0,
+    "impressions": 0
+  },
+  "variations": {},
+  "lastUpdated": 1712591094170,
+  "firstPublished": 1705596677377,
+  "previewUrl": "https://www.bodi.com/us/en/s/fitness/21-day-fix",
+  "testRatio": 1,
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2F97e6e0cdd6a0493da63cf0b4cf432853%2F08b5dbd755b143c5b7984b869abb78eb",
+  "createdBy": "hRvm2RevgGZjAhHXJBWDzGaIt1Q2",
+  "lastUpdatedBy": "Phx33Ef9JVbFpEdAWU80EO0nXK92",
+  "folders": []
+}
