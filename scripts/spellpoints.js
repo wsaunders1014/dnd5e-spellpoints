@@ -25,7 +25,9 @@ export class SpellPoints {
       spMixedMode: true,
       isCustom: "false",
       spCustomFormulaBase: '0',
-      spCustomFormulaSlotMultiplier: '1'
+      spCustomFormulaSlotMultiplier: '1',
+      limit:true,
+      limitInput:1
     };
   }
 
@@ -234,6 +236,11 @@ export class SpellPoints {
      //if consume is false, then cost is 0.
     spellPointCost = (consume.consumeSpellSlot) ? spellPointCost:0;
 
+    //reduce/increase cost by mods.
+    if(settings.limit && spellPointCost < parseInt(settings.limitInput)){
+      spellPointCost = parseInt(settings.limitInput);
+    }
+
     /** check if message should be visible to all or just player+gm */
     let SpeakTo = [];
     if (this.settings.chatMessagePrivate) {
@@ -410,7 +417,9 @@ export class SpellPoints {
         }
     
         cost = SpellPoints.withActorData(settings.spellPointsCosts[level], actor) + totalMods + tempMod;
-
+        if(settings.limit && cost < parseInt(settings.limitInput)){
+          cost = parseInt(settings.limitInput);
+        }
         let newText = `${CONFIG.DND5E.spellLevels[level]} (${game.i18n.format("dnd5e-spellpoints.spellCost", { amount: cost, SpellPoints: settings.spResource })})`
         if ((selectValue == 'pact' && warlockCanCast) || selectValue != 'pact') {
             $(this).text(newText);

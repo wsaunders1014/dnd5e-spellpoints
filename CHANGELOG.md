@@ -38,4 +38,5 @@
     - Added some support for Warlock spell point casting though I don't see the point. It doesn't let Warlock use spell points on lower level spells since that's counter to Warlock class, so not sure why anyone would need it.
 - 1.7.2
    - Added compatability for DND5e 2.4.0
-    
+- 1.7.3
+   - Added a minimum spell point cost.

@@ -60,5 +60,8 @@
     "dnd5e-spellpoints.spConfig-title":"Spell Point Configuration",
     "dnd5e-spellpoints.spBonusPoints":"Bonus Spell Points",
     "dnd5e-spellpoints.SpellPointsOverride":"Set Max Spell Points",
-    "dnd5e-spellpoints.calculateTotalPointsBySlots": "Calculate Spell Points by Slots"
+    "dnd5e-spellpoints.calculateTotalPointsBySlots": "Calculate Spell Points by Slots",
+    "dnd5e-spellpoints.limit":"Enable Spell Point Limit?",
+    "dnd5e-spellpoints.limitInputNotes":"To set a minimum spell point cost, enter a number.",
+    "dnd5e-spellpoints.limitInput":"Minimum Spell Point Cost"
 }
