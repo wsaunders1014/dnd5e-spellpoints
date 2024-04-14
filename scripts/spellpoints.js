@@ -111,6 +111,7 @@ export class SpellPoints {
   }
 
   static async initializeSpellPoints(actor){
+    console.log('initializeSpellPoints')
     if(actor.flags[MODULE_NAME]?.sp?.hasOwnProperty('current') && actor.flags[MODULE_NAME]?.sp?.hasOwnProperty('base') && actor.flags[MODULE_NAME]?.sp?.hasOwnProperty('max'))
     return;
     
@@ -126,11 +127,11 @@ export class SpellPoints {
   }
   static async updateSpellPointsOnLevelUp(actor) {
 
-    const base = (actor.classes.hasOwnProperty('warlock')) ? SpellPoints.getSpellPointsByPact(actor): SpellPoints.getSpellPointsBySlot(actor);
+    //const base = (actor.classes.hasOwnProperty('warlock')) ? SpellPoints.getSpellPointsByPact(actor): SpellPoints.getSpellPointsBySlot(actor);
 
     await actor.setFlag(MODULE_NAME,'level',actor.system.details.level);
-    await actor.setFlag(MODULE_NAME,'sp.base', base);
-    SpellPoints.updateMaxSP(actor,true);
+   // await actor.setFlag(MODULE_NAME,'sp.base', base);
+//SpellPoints.updateMaxSP(actor,false);
   }
   /**
    * Evaluates the given formula with the given actors data. Uses FoundryVTT's Roll
@@ -697,7 +698,7 @@ export class SpellPoints {
 
     let html_checkbox = '<h3 class="form-header">Spell Points</h3>';
     html_checkbox += '<div class="form-group"><label>'+spellPointUseOnSheetLabel+'</label>';
-    html_checkbox += '<input name="flags.dnd5e-spellpoints.enabled" ' + checked + ' class="spEnableInput" type="checkbox" value="1">';
+    html_checkbox += '<input name="flags.dnd5e-spellpoints.enabled" ' + checked + ' class="spEnableInput" type="checkbox" data-dtype="Boolean" value="true">';
     html_checkbox += '<p class="notes">'+game.i18n.localize('dnd5e-spellpoints.use-spellpoints-note')+'</p>';
     html_checkbox += '</div>';
     html_checkbox += '<div class="form-group"><label>'+game.i18n.localize('dnd5e-spellpoints.spellpoints-modifier-label') + '</label>';
@@ -724,7 +725,7 @@ export class SpellPoints {
         //set or get spell point flags
     if(data.actor.classes.hasOwnProperty('warlock') && !SpellPoints.settings.warlockUseSp)
         return true;
-    
+   
     if(!data.actor.flags[MODULE_NAME].hasOwnProperty('sp'))
         await SpellPoints.initializeSpellPoints(data.actor);
 
@@ -736,11 +737,11 @@ export class SpellPoints {
             <i class="fas fa-cog"></i>
         </a>
         <div class="attribute-value multiple">
-            <input name="flags.dnd5e-spellpoints.sp.current" type="text" value="${data.actor.flags['dnd5e-spellpoints'].sp.current}" placeholder="0" data-tooltip="dnd5e-spellpoints.SpellPointsCurrent" data-dtype="Number">
+            <input name="flags.dnd5e-spellpoints.sp.current" type="text" value="${data.actor.flags[MODULE_NAME].sp.current}" placeholder="0" data-tooltip="dnd5e-spellpoints.SpellPointsCurrent" data-dtype="Number">
             <span class="sep"> / </span>
-            <span data-tooltip="dnd5e-spellpoints.SpellPointsMax">${data.actor.flags['dnd5e-spellpoints'].sp.max}</span>
+            <span data-tooltip="dnd5e-spellpoints.SpellPointsMax">${data.actor.flags[MODULE_NAME].sp.max}</span>
         </div>
-    </li>`).appendTo('.header-details ul.attributes',html);
+    </li>`).appendTo(html.find('.header-details ul.attributes'));
     html.on('click','.spellpoints .config-button', ()=>{
         new SpellPointsConfig(data.actor).render(true);
     })

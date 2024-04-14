@@ -10,7 +10,7 @@ Handlebars.registerHelper("spFormat", (path, ...args) => {
 
 Hooks.on('init', () => {
   //console.log('SpellPoints init');
-  //CONFIG.debug.hooks = true;
+  CONFIG.debug.hooks = true;
   /** should spellpoints be enabled */
   game.settings.register(MODULE_NAME, "spEnableSpellpoints", {
     name: "Enable Spell Points system",
@@ -86,9 +86,10 @@ Hooks.on('dnd5e.advancementManagerComplete',(data)=>{
 
 
 Hooks.on('preUpdateActor',(actor,updates,diff)=>{
+  console.log(actor,updates,diff);
     if(!updates.hasOwnProperty('flags'))
         return;
-    if(updates.flags[MODULE_NAME]?.enabled){
+    if(updates.flags[MODULE_NAME]?.enabled && actor.ownership.hasOwnProperty(game.user.id)){
 
         SpellPoints.initializeSpellPoints(actor);
     }

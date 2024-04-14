@@ -40,3 +40,5 @@
    - Added compatability for DND5e 2.4.0
 - 1.7.3
    - Added a minimum spell point cost.
+- 1.7.4
+   - Bugfixes: Removed error message for other players on level up. Disabled spell point calculation on level up and replenishing spell points to max on level up. Fixed bug where spell point boxes got added when opening mulitple character sheets, and issues with current spell points getting updated erroneously with wrong values.
