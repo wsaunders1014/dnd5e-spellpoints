@@ -111,7 +111,7 @@ export class SpellPoints {
   }
 
   static async initializeSpellPoints(actor){
-    console.log('initializeSpellPoints')
+    //console.log('initializeSpellPoints')
     if(actor.flags[MODULE_NAME]?.sp?.hasOwnProperty('current') && actor.flags[MODULE_NAME]?.sp?.hasOwnProperty('base') && actor.flags[MODULE_NAME]?.sp?.hasOwnProperty('max'))
     return;
     
@@ -234,13 +234,14 @@ export class SpellPoints {
     //reduce/increase cost by mods.
     spellPointCost = spellPointCost + totalMods;
 
-     //if consume is false, then cost is 0.
-    spellPointCost = (consume.consumeSpellSlot) ? spellPointCost:0;
+   
 
     //reduce/increase cost by mods.
     if(settings.limit && spellPointCost < parseInt(settings.limitInput)){
       spellPointCost = parseInt(settings.limitInput);
     }
+    //if consume is false, then cost is 0.
+      spellPointCost = (consume.consumeSpellSlot) ? spellPointCost:0;
 
     /** check if message should be visible to all or just player+gm */
     let SpeakTo = [];
@@ -257,16 +258,16 @@ export class SpellPoints {
     };
     actor.update(updateActor);
     /** update spellpoints **/
-    if (actualSpellPoints - spellPointCost >= 0 ) {
+    if (actualSpellPoints - spellPointCost >= 0 || consume.consumeSpellSlot === false ) {
       /* character has enough spellpoints */
       //If Legacy Mode, subtract from resource, otherwise use flag.
       if(isLegacyMode)
         spellPointResource.values.value = spellPointResource.values.value - spellPointCost;
       else
         actor.setFlag(MODULE_NAME,'sp.current',spellPointResource.current-spellPointCost);
-
+      let format = (consume.consumeSpellSlot) ? "dnd5e-spellpoints.spellUsingSpellPoints":"dnd5e-spellpoints.noUseSpellPoints";
       ChatMessage.create({
-        content: "<i style='color:green;'>" + game.i18n.format("dnd5e-spellpoints.spellUsingSpellPoints",
+        content: "<i style='color:green;'>" + game.i18n.format(format,
           {
             ActorName: actor.name,
             SpellPoints: this.settings.spResource,
@@ -278,7 +279,7 @@ export class SpellPoints {
         isAuthor: true,
         whisper: SpeakTo
       });
-    } else if (actualSpellPoints - spellPointCost < 0) {
+    } else if (actualSpellPoints - spellPointCost < 0 && consume.consumeSpellSlot === true ) {
       /** check if actor can cast using HP **/
       if (this.settings.spEnableVariant) {
         // spell point resource is 0 but character can still cast.

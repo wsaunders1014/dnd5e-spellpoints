@@ -42,3 +42,6 @@
    - Added a minimum spell point cost.
 - 1.7.4
    - Bugfixes: Removed error message for other players on level up. Disabled spell point calculation on level up and replenishing spell points to max on level up. Fixed bug where spell point boxes got added when opening mulitple character sheets, and issues with current spell points getting updated erroneously with wrong values.
+- 1.7.5
+    - Fixed bug where unchecking consume spell points would still cause you to take the minimum spell point set.
+    - Added some new messaging for ignoring spell point consumption.
